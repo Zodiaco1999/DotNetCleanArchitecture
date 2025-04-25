@@ -9,8 +9,8 @@ public sealed class Review : Entity
     public Guid VehiculoId { get; private set; }
     public Guid AlquilerId { get; private set; }
     public Guid UserId { get; private set; }
-    public int Rating { get; private set; }
-    public string? Comentario { get; private set; }
+    public Rating Rating { get; private set; }
+    public Comentario Comentario { get; private set; }
     public DateTime? FechaCreacion { get; private set; }
 
     private Review(
@@ -18,8 +18,8 @@ public sealed class Review : Entity
         Guid vehiculoId,
         Guid alquilerId,
         Guid userId,
-        int rating,
-        string comentario,
+        Rating rating,
+        Comentario comentario,
         DateTime fechaCreacion
     ) : base(id)
     {
@@ -33,8 +33,8 @@ public sealed class Review : Entity
 
     public static Result<Review> Create(
         Alquiler alquiler,
-        int rating,
-        string comentario,
+        Rating rating,
+        Comentario comentario,
         DateTime fechaCreacion
     )
     {
