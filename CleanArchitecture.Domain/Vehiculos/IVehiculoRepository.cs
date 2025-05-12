@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Domain.Vehiculos;
 
-public interface IUserRepository
+public interface IVehiculoRepository
 {
     Task<Vehiculo?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
 }
