@@ -34,13 +34,13 @@ public class PrecioService
         var precioTotal = Moneda.Zero();
         precioTotal += precioPorPeriodo;
 
-        if (vehiculo.Mantenimineto.IsZero())
+        if (vehiculo.Mantenimiento.IsZero())
         {
-            precioTotal += vehiculo.Mantenimineto;
+            precioTotal += vehiculo.Mantenimiento;
         }
 
         precioTotal += accesorioCharges;
 
-        return new PrecioDetalle(precioPorPeriodo, vehiculo.Mantenimineto, accesorioCharges, precioTotal);
+        return new PrecioDetalle(precioPorPeriodo, vehiculo.Mantenimiento, accesorioCharges, precioTotal);
     }
 }

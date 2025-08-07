@@ -9,7 +9,7 @@ public sealed class Vehiculo : Entity
     public Vin? Vin { get; private set; }
     public Direccion? Direccion { get; private set; }
     public Moneda Precio { get; private set; }
-    public Moneda Mantenimineto { get; private set; }
+    public Moneda Mantenimiento { get; private set; }
     public DateTime? FechaUltimaAlquiler { get; internal set; }
     public List<Accesorio> Accesorios { get; private set; } = [];
 
@@ -28,7 +28,7 @@ public sealed class Vehiculo : Entity
         Direccion = direccion;
         Vin = vin;
         Precio = precio;
-        Mantenimineto = mantenimiento;
+        Mantenimiento = mantenimiento;
         FechaUltimaAlquiler = fechaUltimaAlquiler;
         Accesorios = accesorios;
     }
