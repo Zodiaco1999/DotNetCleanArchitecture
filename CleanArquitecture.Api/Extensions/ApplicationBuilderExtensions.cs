@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Infraestructure;
+using CleanArquitecture.Api.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArquitecture.Api.Extensions;
@@ -27,5 +28,10 @@ public static class ApplicationBuilderExtensions
                 throw;
             }
         }
+    }
+
+    public static void UseCustomExceptionHandler(this IApplicationBuilder app)
+    {
+        app.UseMiddleware<ExceptionHandlerMiddleware>();
     }
 }

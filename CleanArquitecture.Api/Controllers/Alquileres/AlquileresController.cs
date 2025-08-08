@@ -23,7 +23,7 @@ public class AlquileresController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> ReservarAlquiler(Guid id, AlquilerReservaRequest alquilerRequest, CancellationToken cancellationToken)
+    public async Task<IActionResult> ReservarAlquiler(AlquilerReservaRequest alquilerRequest, CancellationToken cancellationToken)
     {
         var command = new ReservarAlquilerCommand(
             alquilerRequest.VehiculoId,

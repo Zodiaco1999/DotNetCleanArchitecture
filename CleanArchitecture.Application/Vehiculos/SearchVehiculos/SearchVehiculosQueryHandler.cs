@@ -27,7 +27,7 @@ internal class SearchVehiculosQueryHandler : IQueryHandler<SearchVehiculosQuery,
         const string sql = """
          SELECT
               a.id AS Id,
-              a.model AS Modelo,
+              a.modelo AS Modelo,
               a.vin AS Vin,
               a.precio_monto AS Precio,
               a.precio_tipo_moneda AS TipoMoneda,
@@ -35,16 +35,16 @@ internal class SearchVehiculosQueryHandler : IQueryHandler<SearchVehiculosQuery,
               a.direccion_departamento AS Departamento,
               a.direccion_provincia AS Provincia,
               a.direccion_ciudad AS Ciudad,
-              a,direccion_calle AS Calle
+              a.direccion_calle AS Calle
          FROM vehiculos AS a
          WHERE NOT EXISTS (
              SELECT 1
              FROM alquileres AS b
              WHERE 
-                 b.vehiculo_id = a.id AND
-                 AND b.duracion_inicio <= @EndDate AND
-                 AND b.duracion_final >= @StartDate AND
-                 b.status = ANY(@ActiveAlquilerStatuses)
+                 b.vehiculo_id = a.id 
+                 AND b.duracion_inicio <= @EndDate 
+                 AND b.duracion_fin >= @StartDate
+                 AND b.status = ANY(@ActiveAlquilerStatuses)
          )
          """;
         var vehiculos = await connection

@@ -31,7 +31,7 @@ public class PrecioService
             accesorioCharges = new Moneda(precioPorPeriodo.Monto * porcentageChange, tipoMoneda);
         }
 
-        var precioTotal = Moneda.Zero();
+        var precioTotal = Moneda.Zero(tipoMoneda);
         precioTotal += precioPorPeriodo;
 
         if (vehiculo.Mantenimiento.IsZero())

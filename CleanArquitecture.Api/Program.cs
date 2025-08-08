@@ -20,6 +20,7 @@ if (app.Environment.IsDevelopment())
 }
 
 await app.ApplyMigration();
+app.UseCustomExceptionHandler();
 //app.SeedData();
 
 app.MapControllers();
