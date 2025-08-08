@@ -15,7 +15,10 @@ public static class ApplicationBuilderExtensions
             try
             {
                 var context = service.GetRequiredService<ApplicationDbContext>();
-                await context.Database.MigrateAsync();
+                if (!await context.Database.CanConnectAsync())
+                {
+                    await context.Database.MigrateAsync();
+                }
             }
             catch (Exception ex)
             {
