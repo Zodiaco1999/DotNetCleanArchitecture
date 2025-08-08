@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Application.Abstractions.Email;
 
-namespace CleanArchitecture.Infrastructure.Email;
+namespace CleanArchitecture.Infraestructure.Email;
 
 internal sealed class EmailService : IEmailService
 {

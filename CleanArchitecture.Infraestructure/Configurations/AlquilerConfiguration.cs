@@ -5,7 +5,7 @@ using CleanArchitecture.Domain.Vehiculos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CleanArchitecture.Infrastructure.Configurations;
+namespace CleanArchitecture.Infraestructure.Configurations;
 
 internal sealed class AlquilerConfiguration : IEntityTypeConfiguration<Alquiler>
 {
@@ -48,8 +48,5 @@ internal sealed class AlquilerConfiguration : IEntityTypeConfiguration<Alquiler>
         builder.HasOne<User>()
             .WithMany()
             .HasForeignKey(alquiler => alquiler.UserId);
-
-
-
     }
 }

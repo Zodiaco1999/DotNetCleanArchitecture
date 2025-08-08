@@ -13,6 +13,8 @@ public sealed class Vehiculo : Entity
     public DateTime? FechaUltimaAlquiler { get; internal set; }
     public List<Accesorio> Accesorios { get; private set; } = [];
 
+    private Vehiculo() { }  
+
     public Vehiculo(
         Guid id,
         Modelo modelo,

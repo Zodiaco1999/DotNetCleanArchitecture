@@ -2,7 +2,7 @@ using CleanArchitecture.Domain.Alquileres;
 using CleanArchitecture.Domain.Vehiculos;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure.Repositories;
+namespace CleanArchitecture.Infraestructure.Repositories;
 
 internal sealed class AlquilerRepository : Repository<Alquiler>, IAlquilerRepository
 {

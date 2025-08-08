@@ -5,16 +5,16 @@ using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Alquileres;
 using CleanArchitecture.Domain.Users;
 using CleanArchitecture.Domain.Vehiculos;
-using CleanArchitecture.Infrastructure.Clock;
-using CleanArchitecture.Infrastructure.Data;
-using CleanArchitecture.Infrastructure.Email;
-using CleanArchitecture.Infrastructure.Repositories;
+using CleanArchitecture.Infraestructure.Clock;
+using CleanArchitecture.Infraestructure.Data;
+using CleanArchitecture.Infraestructure.Email;
+using CleanArchitecture.Infraestructure.Repositories;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Infrastructure;
+namespace CleanArchitecture.Infraestructure;
 
 public static class DependencyInjection
 {

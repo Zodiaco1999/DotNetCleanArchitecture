@@ -1,6 +1,6 @@
 using CleanArchitecture.Domain.Vehiculos;
 
-namespace CleanArchitecture.Infrastructure.Repositories;
+namespace CleanArchitecture.Infraestructure.Repositories;
 
 
 internal sealed class VehiculoRepository : Repository<Vehiculo>, IVehiculoRepository

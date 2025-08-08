@@ -1,10 +1,11 @@
-﻿using CleanArchitecture.Domain.Abstractions;
+﻿using CleanArchitecture.Application.Exceptions;
+using CleanArchitecture.Domain.Abstractions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure;
+namespace CleanArchitecture.Infraestructure;
 
-internal class ApplicationDbContext : DbContext, IUnitOfWork
+public class ApplicationDbContext : DbContext, IUnitOfWork
 {
     private readonly IPublisher _publisher;
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IPublisher publisher) : base(options)
@@ -20,11 +21,16 @@ internal class ApplicationDbContext : DbContext, IUnitOfWork
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        var result = await base.SaveChangesAsync(cancellationToken);
-
-        await PublishDomainEventsAsync();
-         
-        return result;
+        try
+        {
+            var result = await base.SaveChangesAsync(cancellationToken);
+            await PublishDomainEventsAsync();
+            return result;
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            throw new ConcurrencyException("La excepcion por concurrencia se disparo", ex);
+        }        
     }
 
     private async Task PublishDomainEventsAsync()

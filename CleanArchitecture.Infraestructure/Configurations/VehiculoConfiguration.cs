@@ -3,7 +3,7 @@ using CleanArchitecture.Domain.Vehiculos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CleanArchitecture.Infrastructure.Configurations;
+namespace CleanArchitecture.Infraestructure.Configurations;
 
 internal sealed class VehiculoConfiguration : IEntityTypeConfiguration<Vehiculo>
 {
@@ -32,6 +32,8 @@ internal sealed class VehiculoConfiguration : IEntityTypeConfiguration<Vehiculo>
         priceBuilder.Property(moneda => moneda.TipoMoneda)
         .HasConversion(tipoMoneda => tipoMoneda.Codigo, codigo => TipoMoneda.FromCodigo(codigo!));
       });
+
+        builder.Property<uint>("Version").IsRowVersion();
 
     }
 }

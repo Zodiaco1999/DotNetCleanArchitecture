@@ -2,7 +2,7 @@ using System.Data;
 using CleanArchitecture.Application.Abstractions.Data;
 using Npgsql;
 
-namespace CleanArchitecture.Infrastructure.Data;
+namespace CleanArchitecture.Infraestructure.Data;
 
 internal sealed class SqlConnectionFactory : ISqlConnectionFactory
 {

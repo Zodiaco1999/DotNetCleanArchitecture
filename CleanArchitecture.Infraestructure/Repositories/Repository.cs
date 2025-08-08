@@ -1,7 +1,7 @@
 using CleanArchitecture.Domain.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure.Repositories;
+namespace CleanArchitecture.Infraestructure.Repositories;
 
 
 internal abstract class Repository<T>

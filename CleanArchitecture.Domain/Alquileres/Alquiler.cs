@@ -21,6 +21,8 @@ public sealed class Alquiler : Entity
     public DateTime? FechaCompletado { get; private set; }
     public DateTime? FechaCancelacion { get; private set; }
 
+    private Alquiler() { }
+
     private Alquiler(
         Guid id,
         Guid vehiculoId,

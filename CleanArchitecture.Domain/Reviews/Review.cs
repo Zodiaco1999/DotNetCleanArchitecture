@@ -13,6 +13,8 @@ public sealed class Review : Entity
     public Comentario Comentario { get; private set; }
     public DateTime? FechaCreacion { get; private set; }
 
+    private Review() { }
+
     private Review(
         Guid id,
         Guid vehiculoId,

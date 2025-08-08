@@ -2,7 +2,7 @@ using CleanArchitecture.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CleanArchitecture.Infrastructure.Configurations;
+namespace CleanArchitecture.Infraestructure.Configurations;
 
 internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
 {

@@ -5,7 +5,7 @@ using CleanArchitecture.Domain.Vehiculos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CleanArchitecture.Infrastructure.Configurations;
+namespace CleanArchitecture.Infraestructure.Configurations;
 
 internal sealed class ReviewConfiguration : IEntityTypeConfiguration<Review>
 {
