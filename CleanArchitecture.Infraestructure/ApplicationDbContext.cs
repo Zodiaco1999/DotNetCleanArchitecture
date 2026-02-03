@@ -2,7 +2,7 @@
 using CleanArchitecture.Domain.Abstractions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-
+                                                    
 namespace CleanArchitecture.Infraestructure;
 
 public class ApplicationDbContext : DbContext, IUnitOfWork

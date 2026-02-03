@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CleanArchitecture.Application\CleanArchitecture.Application.csproj" />
     <ProjectReference Include="..\CleanArchitecture.Infraestructure\CleanArchitecture.Infraestructure.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Infraestructure\CleanArchitecture.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

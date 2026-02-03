@@ -17,4 +17,8 @@
     <ProjectReference Include="..\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Vehiculos\UpdateVehiculo\" />
+  </ItemGroup>
+
 </Project>
