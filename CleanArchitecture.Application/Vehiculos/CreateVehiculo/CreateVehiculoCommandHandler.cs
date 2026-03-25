@@ -1,5 +1,4 @@
 ﻿using CleanArchitecture.Application.Abstractions.Messaging;
-using CleanArchitecture.Application.Exceptions;
 using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Vehiculos;
 
@@ -30,7 +29,7 @@ internal sealed class CreateVehiculoCommandHandler : ICommandHandler<CreateVehic
 
         _vehiculoRepository.Add(vehiculo);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
-        
+
         return Result.Success(vehiculo.Id);
     }
 }
